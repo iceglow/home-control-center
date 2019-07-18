@@ -1,0 +1,31 @@
+<div style="height: 100vh;">
+<mat-sidenav-container style="  min-height: 100%;" fxFlex>
+  <mat-sidenav [opened]="true" mode="side">
+    <mat-list>
+      <mat-list-item>
+        <button mat-icon-button matTooltip="Dashboard" [matTooltipPosition]="'right'"
+                [matTooltipClass]="'dash-tooltip-class'" (click)="changeView('dashboard')">
+          <mat-icon mat-list-icon>view_comfy</mat-icon>
+        </button>
+      </mat-list-item>
+      <mat-list-item *ngFor="let card of cardsWithIcon()">
+        <button mat-icon-button
+                matTooltip="{{card.input.name.value}}"
+                [matTooltipPosition]="'right'"
+                [matTooltipClass]="'dash-tooltip-class'">
+          <mat-icon mat-list-icon>{{card.input.iconClass.value}}</mat-icon>
+        </button>
+      </mat-list-item>
+    </mat-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-grid-list [cols]="cols | async" rowHeight="1:1" gutterSize="0" *ngIf="contentView=='dashboard'">
+      <mat-grid-tile *ngFor="let card of cards"
+                     [colspan]="card.input.cols.value | async"
+                     [rowspan]="card.input.rows.value | async">
+        <app-dashboard-card-spawner [card]="card"></app-dashboard-card-spawner>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+</div>

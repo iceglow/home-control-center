@@ -1,0 +1,27 @@
+p {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+#clock {
+  font-family: 'Share Tech Mono', monospace;
+  color: #ffffff;
+  color: #daf6ff;
+  text-shadow: 0 0 20px rgba(131, 190, 201, 1), 0 0 20px rgba(131, 190, 201, 0);
+
+  top: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+
+  .time {
+    letter-spacing: 0.05em;
+    font-size: 30px;
+    padding: 5px 0;
+  }
+
+  .date {
+    letter-spacing: 0.1em;
+    font-size: 14px;
+  }
+}
