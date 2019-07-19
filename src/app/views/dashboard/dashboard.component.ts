@@ -8,6 +8,11 @@ import { Idle, DEFAULT_INTERRUPTSOURCES } from '@ng-idle/core';
 import {BlankComponent} from '../../cards/blank/blank.component';
 import {ClockComponent} from '../../cards/clock/clock.component';
 
+
+import {
+  faTh
+} from '@fortawesome/free-solid-svg-icons';
+
 const VIEWS = {
   DASHBOARD: 'dashboard',
   CALENDAR: 'calendar',
@@ -31,6 +36,8 @@ export class DashboardComponent implements OnInit, OnDestroy {
   cols_big: Observable<number>;
   cols_med: Observable<number>;
   cols_sml: Observable<number>;
+
+  iconDashboard = faTh;
 
   contentView = 'dashboard';
 

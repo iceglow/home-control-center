@@ -5,7 +5,7 @@
       <mat-list-item>
         <button mat-icon-button matTooltip="Dashboard" [matTooltipPosition]="'right'"
                 [matTooltipClass]="'dash-tooltip-class'" (click)="changeView('dashboard')">
-          <mat-icon mat-list-icon>view_comfy</mat-icon>
+          <fa-icon [icon]="iconDashboard" aria-hidden="true"></fa-icon>
         </button>
       </mat-list-item>
       <mat-list-item *ngFor="let card of cardsWithIcon()">
